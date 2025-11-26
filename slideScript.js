@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
     stopAutoPlay();
     interval = setInterval(() => {
       moveToSlide(index + 1);
-    }, 8000); // 8s — ajuste se quiser
+    }, 8000); // 8s ajusta se quiser
   }
   function stopAutoPlay() {
     if (interval) {
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   startAutoPlay();
 
-  // TOUCH: suporte a drag com touchmove para melhorar UX
+
   let startX = 0;
   let currentX = 0;
   let isTouching = false;
@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
   track.addEventListener("touchend", (e) => {
     if (!isTouching) return;
     isTouching = false;
-    track.style.transition = ''; // devolve a transição do CSS
+    track.style.transition = ''; 
     const delta = currentX - startX;
     const threshold = Math.min(getSlideWidth() * 0.15, 60); // 15% ou 60px
     if (delta < -threshold) {

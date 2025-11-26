@@ -9,6 +9,10 @@ body {
   min-height: 100vh;
 }
 
+html, body {
+  height: 100%;
+}
+
 @keyframes snow {
 0% { background-position: 0 0; }
 100% { background-position: 0 1000px; }
@@ -69,28 +73,28 @@ font-weight: bold;
   padding: 20px;
   background: #fff5f5;
   border-radius: 20px;
-  border: 1px solid #a9d5a4; /* borda solicitada */
-  width: 92%;           /* ocupa a maior parte, mas deixa margens laterais */
-  max-width: 780px;     /* não ficará muito larga em telas grandes */
-  margin: 20px auto;    /* centraliza horizontalmente */
+  border: 1px solid #a9d5a4; 
+  width: 92%;           
+  max-width: 780px;     
+  margin: 20px auto;    
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-/* Garantir que o texto da hero fique acima da imagem */
+
 .hero h2,
 .hero p {
   position: relative;
   z-index: 2;
 }
 
-/* Estilo da imagem dentro da hero: centralizada e com bordas arredondadas */
+
 .hero img {
   display: block;
   margin: 16px auto 0;
-  width: 200px;       /* tamanho preferido */
-  max-width: 90%;     /* responsivo em telas menores */
+  width: 200px;       
+  max-width: 90%;     
   height: auto;
-  border-radius: 16px; /* bordas arredondadas */
+  border-radius: 16px; 
   box-shadow: 0 4px 8px rgba(0,0,0,0.12);
   position: relative;
   z-index: 1;
@@ -113,14 +117,14 @@ font-size: 18px;
 .servicos p {
   margin-left: auto;
   margin-right: auto;
-  max-width: 720px; /* limita largura para melhorar leitura em telas grandes */
+  max-width: 720px; 
 }
 .galeria h2 {
   text-align: center;
   margin: 18px auto;
 }
 
-/* Grid da galeria: cada item contém imagem + legenda */
+
 .galeria .grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -137,17 +141,17 @@ font-size: 18px;
 }
 
 .gallery-item .img-wrap {
-  flex: 0 0 48%; /* image column takes ~48% */
+  flex: 0 0 48%; 
   overflow: hidden;
   border-radius: 12px;
 }
 
 .gallery-item .img-wrap img {
   width: 100%;
-  height: auto; /* preserve original proportions */
+  height: auto; 
   max-width: 100%;
   display: block;
-  border-radius: 12px; /* rounded corners */
+  border-radius: 12px; 
 }
 
 .gallery-item .caption {
@@ -156,8 +160,8 @@ font-size: 18px;
 
 .gallery-item .caption p {
   margin: 0;
-  font-size: 18px; /* maior fonte */
-  font-weight: 700; /* negrito */
+  font-size: 18px; 
+  font-weight: 700;
   color: #333;
   line-height: 1.45;
 }
@@ -191,13 +195,13 @@ border-radius: 5px;
 cursor: pointer;
 }
 
-/* Estilos para centralizar e limitar o formulário de agendamento */
+/*formulário de agendamento */
 #agendamentoForm {
   width: 92%;
-  max-width: 680px; /* não fica muito largo em telas grandes */
-  margin: 28px auto; /* centraliza horizontalmente */
+  max-width: 680px; 
+  margin: 28px auto;
   padding: 18px;
-  background: #ffffffcc; /* fundo leve para destacar sem perder o tema */
+  background: #ffffffcc; 
   border-radius: 12px;
   border: 1px solid rgba(169,213,164,0.35);
   box-shadow: 0 6px 18px rgba(0,0,0,0.06);
@@ -329,6 +333,7 @@ footer {
   width: 100%;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   font-family: Constantia, sans-serif;
+  margin-top: auto; /* empurra footer para o final */
 }
 
 /* Responsividade */
