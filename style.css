@@ -119,15 +119,60 @@ font-size: 18px;
   text-align: center;
   margin: 18px auto;
 }
+
+/* Grid da galeria: cada item contém imagem + legenda */
 .galeria .grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-gap: 10px;
-padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  padding: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
 }
-.galeria img {
-width: 100%;
-border-radius: 10px;
+
+.gallery-item {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.gallery-item .img-wrap {
+  flex: 0 0 48%; /* image column takes ~48% */
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.gallery-item .img-wrap img {
+  width: 100%;
+  height: auto; /* preserve original proportions */
+  max-width: 100%;
+  display: block;
+  border-radius: 12px; /* rounded corners */
+}
+
+.gallery-item .caption {
+  flex: 1 1 52%;
+}
+
+.gallery-item .caption p {
+  margin: 0;
+  font-size: 18px; /* maior fonte */
+  font-weight: 700; /* negrito */
+  color: #333;
+  line-height: 1.45;
+}
+
+/* Alterna a ordem: ímpares imagem à esquerda, pares imagem à direita */
+.gallery-item:nth-child(even) { flex-direction: row-reverse; }
+
+/* Mobile: empilha imagem em cima, legenda abaixo */
+@media (max-width: 800px) {
+  .galeria .grid { grid-template-columns: 1fr; gap: 18px; }
+  .gallery-item { flex-direction: column; align-items: stretch; }
+  .gallery-item .img-wrap { flex: none; width: 100%; }
+  .gallery-item .img-wrap img { width: 100%; height: auto; }
+  .gallery-item .caption { width: 100%; padding-top: 12px; }
+  .gallery-item:nth-child(even) { flex-direction: column; }
 }
 .formulario {
 padding: 20px;
